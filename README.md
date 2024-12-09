@@ -1,5 +1,6 @@
-covid-fusion
-==============================
+# covid-fusion
+
+## Overview
 
 This research is focusedon SARS-COV-2 transmition leveraging data fusion and machine learning models.
 
@@ -7,7 +8,7 @@ One of the goals of the projects is to establish a data science development life
 
 The layout of the directory structure is conducive to transitional research moving toward development. 
 
-Overall Concepts:
+### Overall Concepts:
 
 - Fuse weather data (GSOD), geo locat to geographic extends e.g. counties - focus on humidity, temperature, and wind
 - Gather sentiment on mask use
@@ -19,30 +20,33 @@ Overall Concepts:
 - visualization of risk behaviors
 
 
-building and running
-------------
+### TODO
+
+- 2024-12-08 - parsing gsod data writing to screen, need to parse into GsodData class, created a VERSION file for future image creation
+  - create a Dockerfile, and Makefile for building and running the project
+  - parse csv file ino GsodData class
+- 2021-04-11 - start to leverage D3 for visualizating county behavior, think about a risk model
+- 2020-04-11 - review what data is available in terms of COVID, understand formats, and access.
+- 2021-03-09 - create gsod python library, using text enums for dir names, update directory structure to separate out weather/gsod, instead of having one top level dir in: notebook, and datas
+- 2020-08-03 - research geographic information standards, start to choose what standard to follow, find access to data
+- 2020-06-23 - start to develop ETL capabilities
+
+## Building and running
+
 - cd into project
 - python setup.py develop
-- /Users/owenmccusker/.pyenv/versions/3.10.2/bin/cv_etl_gsod
+  - Installing cv_etl_county_geo script to /Users/owenmccusker/.pyenv/versions/3.10.12/bin
+  - Installing cv_etl_gsod script to /Users/owenmccusker/.pyenv/versions/3.10.12/bin
 
-References
-------------
+For testing, run (need to create test data directory first):
+
+- cv_etl_gsod --output-data-directory ./data/test/gsod
+
+## References
 
 - I used this page to get started (Written using R): https://www.kaggle.com/code/johnjdavisiv/intro-to-the-us-counties-covid19-data/report
 
-
-TODO
-------------
-
-- 2020-04-11 - review what data is available in terms of COVID, understand formats, and access.
-- 2020-06-23 - start to develop ETL capabilities
-- 2020-08-03 - research geographic information standards, start to choose what standard to follow, find access to data
-- 2021-03-09 - create gsod python library, using text enums for dir names, update directory structure to separate out weather/gsod, instead of having one top level dir in: notebook, and datas
-- 2021-04-11 - start to leverage D3 for visualizating county behavior, think about a risk model
-
-
-Project Organization
-------------
+## Project Organization
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`

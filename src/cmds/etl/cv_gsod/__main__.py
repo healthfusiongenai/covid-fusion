@@ -81,21 +81,27 @@ def main(argv=None):
         '--thread-count', type=int, help='number of threads used when reading'
     )
     parser.add_argument(
-        '--save-gsod-files', type=bool, help='store intermediate gsod files locally in output dir, and using year'
+        '--save-gsod-files', 
+        type=bool,         
+        help='store intermediate gsod files locally in output dir, and using year',
+        default=True
     )
     parser.add_argument(
         '--persist-data', type=bool, help='persist gsod data using mongo'
     )
+    
+    # TODO: currently this is downloaded ahead of time. 
+    # We will need to download the file list, from the url, then process in the future, by year
     parser.add_argument(
         '--gsod-output-pathname', 
         type=str, 
-        default='../data/interim/gsod-url-file-list.txt', 
+        default='./data/interim/weather/gsod/gsod-url-file-list.txt', 
         help='pathname to download the file list: defaults: ../data/interim/gsod-url-file-list.txt'
     )
     parser.add_argument(
         '--output-data-directory', 
         type=str, 
-        default='../data', 
+        default='./data/gsod', 
         help='base directory holding gsod data'
     )
     args = parser.parse_args(argv)

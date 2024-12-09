@@ -37,9 +37,10 @@ class GsodData():
     FRSHT: str
     
     def __init__(self, gsod_data: str):
+
         self.gsod_data = gsod_data
         date = 0
-        logging.getLogger().info("Running __init__: %s", gsod_data)
+        logging.getLogger().info(f"Running... gsod_data: {gsod_data}")
 
         if 'DATE' in gsod_data:
             date = int(gsod_data['DATE'])
@@ -48,13 +49,12 @@ class GsodData():
             self.date = datetime.utcfromtimestamp(date)
         else:
             self.date = None
-
+    
         for field in fields(self):
             value = gsod_data.get(field.name, '-')
             if value == '-' or value == 'None' or value is None:
                 value = None
             setattr(self, field.name, value)
-            logging.getLogger().info("%s %s", field.name, value)
 
     def __post_init__(self, gsod_data):
         self.b = self.get_b()

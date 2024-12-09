@@ -14,6 +14,7 @@ class GsodDataFileProcessor:
     def __init__(self, gsod_output_pathname, url, year, save_gsod_files, persist_data, output_data_directory):
         self.logger = logging.getLogger()
         self.gsod_output_pathname = gsod_output_pathname
+        self.local_gsod_pathname = "" # initialized in _get_gsod_file
         self.year = year
         self.url = url
         self.save_gsod_files = save_gsod_files
@@ -28,15 +29,18 @@ class GsodDataFileProcessor:
     def _get_gsod_file(self, gsod_file_url, gsod_dir):
         head, gsod_filename = os.path.split(gsod_file_url)
         
+        # save the local pathname to be used to read and persist later
+        self.local_gsod_pathname = gsod_dir+'/'+gsod_filename
+        
         self.logger.debug('_get_gsod_file: Extracting gsod data file: (' + gsod_file_url + ')')
         r = requests.get(gsod_file_url)
         
         if r.status_code != 404:
-            with open(gsod_dir+'/'+gsod_filename, 'wb') as fp:
+            with open(self.local_gsod_pathname, 'wb') as fp:
                 fp.write(r.content)
             return True
         else:
-            logger.warning('Response 404: Extracting gsod data file: (' + gsod_file_url + ')')
+            self.logger.warning('Response 404: Extracting gsod data file: (' + gsod_file_url + ')')
             return False
     
     def _store_gsod_file_locally(self, fileUrlPathname):
@@ -47,6 +51,21 @@ class GsodDataFileProcessor:
         
     def _process_file(self):
         self.logger.info("processing gsod data from file")
+        
+        with open(self.local_gsod_pathname, 'r') as fp:
+            lines = len(fp.readlines())
+            self.logger.info("processing %d gsod data items", lines)
+            # need to rewind the file pointer to the beginning
+            fp.seek(0)
+            for line in fp:
+                self.logger.info("processing line %s", line.strip())
+                # gsoddata = GsodData(line.strip())
+                # gsoddata.set_0(1)
+                # self.logger.info("processed gsod data %s", gsoddata)
+                
+        # TODO: implement persisting data to mongo, or cassandra, one line, or a batch
+        if self.persist_data == True:
+            self._persist_gsod_data()
         
     def _persist_gsod_data(self):
         self.logger.info("persisting gsod data to mongo")
@@ -59,8 +78,6 @@ class GsodDataFileProcessor:
         
         self._process_file()
         
-        if self.persist_data == True:
-            self._persist_gsod_data()
         self.logger.info("finished processig file")
         
         

@@ -58,7 +58,7 @@ class GsodDirectoryList:
         return parent
 
     def _get_gsod_directory_list(self):
-#        url = 'https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2020/'
+#        url = 'https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2024/'
         ext = 'csv'
         result = self._get_url_paths( self.url + "/" + self.year + "/" , ext)
         # print(result)

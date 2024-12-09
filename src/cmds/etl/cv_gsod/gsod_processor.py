@@ -19,13 +19,8 @@ class GsodProcesser:
         
         self.logger.info("done reading file...")
     
-    def _process_file(self, file_pathname):
-        
+    def _process_file(self, file_pathname):        
         self.fileProcessor.process_GSOD_file(file_pathname)
-
-        # TODO: move this to file processor...     
-#        for gsod_data in self._read_file(file_pathname):
-#            yield GsodData(gsod_data)        
     
     def process(self):
         self.logger.info("processing gsod data from url: %s, store locally in: %s", 
@@ -35,13 +30,15 @@ class GsodProcesser:
                          self.fileProcessor.get_output_directory())
         
         with open(self.directoryList.get_pathname() ) as fp:
+            # each line is a file url, that is opened and processed
+            lines = len(fp.readlines())
+            self.logger.info("processing %d gsod data files", lines)
+            # need to rewind the file pointer to the beginning
+            fp.seek(0)
             for line in fp:
                 self.file_count += 1
-                self.logger.info("Line-%d: %s", self.file_count, line.strip())
-        
+                self.logger.info("Reading %d of %d: Line-%d: %s", self.file_count, lines, self.file_count, line.strip())
                 self._process_file(line.strip())
-                gsoddata = GsodData(line.strip())
-                gsoddata.set_0(1)
-#                    self.logger.info("processed gsod data %s", gsoddata)
+                
         
         
