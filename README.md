@@ -7,12 +7,15 @@ This research is focused on SARS-COV-2 transmition leveraging data fusion and ma
 One of the goals of the projects is to establish a data science development lifecycle, that leverages jupyter/python, then moves to create applications from the initial POC to a set of python applications.
 Later on, either in java, golang, and/or python. Later POCs and development can easily be focused in a separate project.
 
+There are two major development pipelines facilitated by this project:
+
+- The initial research was done using notebooks which is documented in [notebooks/README-notebooks.md](notebooks/README-notebooks.md).
+- The python applications are in the [src](src) directory, and are documented in [src/README-src.md](src/README-src.md).
+
 The layout of the directory structure is conducive to transitional research moving toward development.
 The Project structured was based on the [cookiecutter data science project template](https://drivendata.github.io/cookiecutter-data-science/)
 
-The initial research was done using notebooks which is documented in [notebooks/README-notebooks.md](notebooks/README-notebooks.md).
-
-The python applications are in the [src](src) directory, and are documented in [src/README-src.md](src/README-src.md).
+This project adheres to the [PEP 518](https://peps.python.org/pep-0518/) standard for building python packages.
 
 ## Overall Concepts
 
