@@ -2,13 +2,23 @@
 
 ## Overview
 
-This research is focusedon SARS-COV-2 transmition leveraging data fusion and machine learning models.
+This research is focused on SARS-COV-2 transmition leveraging data fusion and machine learning models.
 
-One of the goals of the projects is to establish a data science development lifecycle, that leverages jupyter/python, then moves to create applications from the initial POC, either in java, golang, and/or python. Later POCs and development can easily be focused in a separate project.
+One of the goals of the projects is to establish a data science development lifecycle, that leverages jupyter/python, then moves to create applications from the initial POC to a set of python applications.
+Later on, either in java, golang, and/or python. Later POCs and development can easily be focused in a separate project.
 
 The layout of the directory structure is conducive to transitional research moving toward development.
+The Project structured was based on the [cookiecutter data science project template](https://drivendata.github.io/cookiecutter-data-science/)
 
-### Overall Concepts
+The initial research was done using notebooks which is documented in [notebooks/README-notebooks.md](notebooks/README-notebooks.md).
+
+The python applications are in the [src](src) directory, and are documented in [src/README-src.md](src/README-src.md).
+
+## Overall Concepts
+
+The overall concept of this project is to fuse weather data (GSOD), geo locat to geographic extends e.g. counties - focus on humidity, temperature, and wind, along with epidemiological data to create a risk model. Other data sources can be added to the model, such as airport hub, population density, and sentiment on mask use.
+
+The following are the goals of the project:
 
 - Fuse weather data (GSOD), geo locat to geographic extends e.g. counties - focus on humidity, temperature, and wind
 - Gather sentiment on mask use
@@ -18,17 +28,6 @@ The layout of the directory structure is conducive to transitional research movi
 - Create temporary COVID risk-behavior data for D3 visualizations
 - Explainable risk, in terms of geolocation of fused health data
 - visualization of risk behaviors
-
-### TODO
-
-- 2024-12-08 - parsing gsod data writing to screen, need to parse into GsodData class, created a VERSION file for future image creation
-  - create a Dockerfile, and Makefile for building and running the project
-  - parse csv file ino GsodData class
-- 2021-04-11 - start to leverage D3 for visualizating county behavior, think about a risk model
-- 2020-04-11 - review what data is available in terms of COVID, understand formats, and access.
-- 2021-03-09 - create gsod python library, using text enums for dir names, update directory structure to separate out weather/gsod, instead of having one top level dir in: notebook, and datas
-- 2020-08-03 - research geographic information standards, start to choose what standard to follow, find access to data
-- 2020-06-23 - start to develop ETL capabilities
 
 ## Building and running
 
@@ -91,5 +90,3 @@ For testing, run (need to create test data directory first):
     │       └── visualize.py
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-
-The Project structured was based on the [cookiecutter data science project template](https://drivendata.github.io/cookiecutter-data-science/)
