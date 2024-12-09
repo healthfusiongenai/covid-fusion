@@ -4,11 +4,11 @@
 
 This research is focusedon SARS-COV-2 transmition leveraging data fusion and machine learning models.
 
-One of the goals of the projects is to establish a data science development lifecycle, that leverages jupyter/python, then moves to create applications from the initial POC, either in java, golang, and/or python. Later POCs and development can easily be focused in a separate project. 
+One of the goals of the projects is to establish a data science development lifecycle, that leverages jupyter/python, then moves to create applications from the initial POC, either in java, golang, and/or python. Later POCs and development can easily be focused in a separate project.
 
-The layout of the directory structure is conducive to transitional research moving toward development. 
+The layout of the directory structure is conducive to transitional research moving toward development.
 
-### Overall Concepts:
+### Overall Concepts
 
 - Fuse weather data (GSOD), geo locat to geographic extends e.g. counties - focus on humidity, temperature, and wind
 - Gather sentiment on mask use
@@ -18,7 +18,6 @@ The layout of the directory structure is conducive to transitional research movi
 - Create temporary COVID risk-behavior data for D3 visualizations
 - Explainable risk, in terms of geolocation of fused health data
 - visualization of risk behaviors
-
 
 ### TODO
 
@@ -44,7 +43,7 @@ For testing, run (need to create test data directory first):
 
 ## References
 
-- I used this page to get started (Written using R): https://www.kaggle.com/code/johnjdavisiv/intro-to-the-us-counties-covid19-data/report
+- I used this page to get started (Written using R): [Intro to the US Counties COVID19 Data](https://www.kaggle.com/code/johnjdavisiv/intro-to-the-us-counties-covid19-data/report)
 
 ## Project Organization
 
@@ -93,7 +92,4 @@ For testing, run (need to create test data directory first):
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
-
---------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+The Project structured was based on the [cookiecutter data science project template](https://drivendata.github.io/cookiecutter-data-science/)
