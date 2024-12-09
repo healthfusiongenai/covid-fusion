@@ -17,6 +17,12 @@ The Project structured was based on the [cookiecutter data science project templ
 
 This project adheres to the [PEP 518](https://peps.python.org/pep-0518/) standard for building python packages.
 
+## Next Steps
+
+The following TODO.md file is a list of the next steps for the project.
+
+- [TODO.md](TODO.md)
+
 ## Overall Concepts
 
 The overall concept of this project is to fuse weather data (GSOD), geo locat to geographic extends e.g. counties - focus on humidity, temperature, and wind, along with epidemiological data to create a risk model. Other data sources can be added to the model, such as airport hub, population density, and sentiment on mask use.
