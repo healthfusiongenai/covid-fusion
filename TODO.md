@@ -23,7 +23,7 @@ View the raw content of this file to understand the format.
 ### Summary
 
 - 2024-12-08 - parsing gsod data writing to screen, need to parse into GsodData class, created a VERSION file for future image creation
-  - create a Dockerfile, and Makefile for building and running the project
+  - create a Dockerfile, and Makefile for building and running the project, add in exception handling...
   - parse csv file ino GsodData class
 - 2021-04-11 - start to leverage D3 for visualizating county behavior, think about a risk model
 - 2020-04-11 - review what data is available in terms of COVID, understand formats, and access.
