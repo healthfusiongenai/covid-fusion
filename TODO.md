@@ -6,7 +6,7 @@ The initial goal is focused on ETL'ing the GSOD weather data into a database, an
 
 ## Todo
 
-- [ ] protext project, enforce PRs, merges, and other git workflows
+- [ ] protect project, enforce PRs, merges, and other git workflows (setup branch protection rules)
 - [ ] add in exception handling
 - [ ] parse csv file ino GsodData class
 - [ ] create the cv_county_geo application, and/or python package. Goal: given lat/long, return the county name.
@@ -18,10 +18,11 @@ The initial goal is focused on ETL'ing the GSOD weather data into a database, an
 
 ### In Progress
 
-- [ ] 2024-12-10 - Create a Makefile, and Dockerfile for the county geo data, and test it. Need external volume for the data.
+- [ ] 2024-12-10 debug running the docker containers
 
 ### Done ✓
 
+- [x] 2024-12-10 - Create a Makefile, and Dockerfile for the county geo data, and test it. Need external volume for the data.
 - [x] 2024-12-08 - parsing gsod data writing to screen, need to parse into GsodData class, created a VERSION file for future image creation
 - [x] 2021-04-11 - start to leverage D3 for visualizating county behavior, think about a risk model
 - [x] 2020-04-11 - review what data is available in terms of COVID, understand formats, and access.
