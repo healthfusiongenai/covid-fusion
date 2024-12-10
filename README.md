@@ -1,5 +1,7 @@
 # covid-fusion
 
+The current project is managed by the [covid-fusion](https://github.com/owenmccusker/covid-fusion) repository.
+
 ## Overview
 
 This research is focused on SARS-COV-2 transmition leveraging data fusion and machine learning models.
