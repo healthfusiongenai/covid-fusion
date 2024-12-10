@@ -6,8 +6,8 @@ The initial goal is focused on ETL'ing the GSOD weather data into a database, an
 
 ## Todo
 
-- [ ] create a Dockerfile, and Makefile for building and running the project, 
-- [ ] add in exception handling...
+- [ ] create a Dockerfile, and Makefile for building and running the project
+- [ ] add in exception handling
 - [ ] parse csv file ino GsodData class
 - [ ] create the cv_county_geo application
 
