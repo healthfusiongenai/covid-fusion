@@ -6,11 +6,11 @@ The focus so far is on the weather data (GSOD) and the epidemiological data (COV
 
 ## cv_etl_gsod - Covid ETL GSOD
 
-This application is used to extract, transform, and load the GSOD weather data into a database. For more information see the [README.md](src/cmds/etl/cv_gsod/README.md) file in the `cv_gsod` directory.
+This application is used to extract, transform, and load the GSOD weather data into a database. For more information see the [README.md](cmds/etl/cv_gsod/README.md) file in the `cv_gsod` directory.
 
 ## cv_county_geo
 
-This application is used to extract, transform, and load the county geo data into a database. For more information see the [README.md](src/cmds/etl/cv_county_geo/README.md) file in the `cv_county_geo` directory.
+This application is used to extract, transform, and load the county geo data into a database. For more information see the [README.md](cmds/etl/cv_county_geo/README.md) file in the `cv_county_geo` directory.
 
 ### Gathering test GSOD data
 
