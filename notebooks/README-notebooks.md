@@ -12,4 +12,4 @@ This directory contains the notebooks for the covid-fusion project. The jupyter 
 
 Each notebook is a proof of concept (POC) for a different aspect of the GSOD ETL harvester framework. The notebooks are numbered in the order of their creation, and are functionally annotated.
 
-The notebooks are then used to create the python applications in the src directory. Later on, the notebooks, and python code can be used to create a scalable application written in go-lang. 
+The notebooks are then used to create the python applications in the src directory. Later on, the notebooks, and python code can be used to create a scalable application written in go-lang.

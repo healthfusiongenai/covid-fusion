@@ -44,5 +44,3 @@ Output to the console looks like this (NOTE: for year 2020: there are 12299 file
 ## cv_county_geo
 
 This application is used to extract, transform, and load the county geo data into a database. For more information see the [README.md](cmds/etl/cv_county_geo/README.md) file in the `cv_county_geo` directory.
-
-
