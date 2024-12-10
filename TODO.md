@@ -8,6 +8,7 @@ The initial goal is focused on ETL'ing the GSOD weather data into a database, an
 
 - [ ] protect project, enforce PRs, merges, and other git workflows (setup branch protection rules)
 - [ ] add in exception handling
+- [ ] add in unit tests, tox.ini
 - [ ] parse csv file ino GsodData class
 - [ ] create the cv_county_geo application, and/or python package. Goal: given lat/long, return the county name.
 - [ ] Focus on Connecticut, counties, colllet sentiment, and other health data
