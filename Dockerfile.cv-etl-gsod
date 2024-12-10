@@ -1,0 +1,44 @@
+ARG PARENT_IMAGE_NAME
+FROM ${PARENT_IMAGE_NAME}
+
+ENV CV_HOME_DIR=/home/cv
+ENV PY_VERSION=python3.11
+ENV PY_ENV_PATH=${CV_HOME_DIR}/cv-venv
+
+RUN apt-get upgrade -y
+
+RUN apt-get update && apt-get install -y \
+    ${PY_VERSION} \
+    python3-pip \
+    python3-venv \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+
+# create the virtual environment
+RUN ${PY_VERSION} -m venv ${PY_ENV_PATH}
+ENV PATH=${PY_ENV_PATH}/bin:$PATH
+
+# create group, user and set permissions
+RUN groupadd cv --gid 1000 && \
+    useradd --home ${CV_HOME_DIR} --uid 1001 --gid 1000 --shell /bin/bash  --create-home cv && \
+    chown -R cv:cv ${CV_HOME_DIR}
+
+# copy the source code
+RUN mkdir -p ${CV_HOME_DIR}/src
+COPY setup.py README.md ${CV_HOME_DIR}
+COPY ./src/* ${CV_HOME_DIR}/src
+COPY requirements.txt ${CV_HOME_DIR}
+
+# clean up the image for vulnerabilities
+#RUN apt-get purge -y \
+#    nettools
+RUN apt-get autoremove -y
+
+USER cv
+WORKDIR ${CV_HOME_DIR}
+
+RUN pip3 install --upgrade pip
+RUN pip3 install --ignore-installed -r requirements.txt
+
+CMD ["python3", "./src/cmds/etl/cv_gsod/__main__.py"]
