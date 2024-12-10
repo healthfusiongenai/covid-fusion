@@ -9,7 +9,7 @@ Later on, either in java, golang, and/or python. Later POCs and development can 
 
 There are two major development pipelines facilitated by this project:
 
-- The initial research was done using notebooks which is documented in [notebooks/README-notebooks.md](notebooks/README-notebooks.md).
+- The initial research was done using python-based notebooks which is documented in [notebooks/README-notebooks.md](notebooks/README-notebooks.md).
 - The python applications are in the [src](src) directory, and are documented in [src/README-src.md](src/README-src.md).
 
 The layout of the directory structure is conducive to transitional research moving toward development.
@@ -32,7 +32,14 @@ The following are the goals of the project:
 - Explainable risk, in terms of geolocation of fused health data
 - visualization of risk behaviors
 
-## Next Steps
+### ETL'ing GSOD data
+
+A listing of a years worth of GSOD data is contained in the file ./data/interim/weather/gsod/gsod-url-file-list.txt. This files is currently downloaded ahead of time, for 2020. In the future, we will need to download this first, per year, and then process the files.
+
+
+GSOD data is downloaded from the [NOAA GSOD](https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2020/01011099999.csv) website.
+
+## TODO
 
 The following TODO.md file is a list of the next steps for the project.
 
