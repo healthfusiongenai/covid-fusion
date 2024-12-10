@@ -36,8 +36,9 @@ The following are the goals of the project:
 
 A listing of a years worth of GSOD data is contained in the file ./data/interim/weather/gsod/gsod-url-file-list.txt. This files is currently downloaded ahead of time, for 2020. In the future, we will need to download this first, per year, and then process the files.
 
+GSOD data is downloaded from the [NOAA GSOD](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00516) website.
 
-GSOD data is downloaded from the [NOAA GSOD](https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2020/01011099999.csv) website.
+An example GSOD file can be seen here: [GSOD-2020-01011099999.csv](https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2020/01011099999.csv)
 
 ## TODO
 
