@@ -2,7 +2,7 @@
 
 This directory contains the python applications for the covid-fusion project.
 
-The focus so far is on the weather data (GSOD) and the epidemiological data (COVID-19). This is a work in progress. 
+The focus so far is on the weather data (GSOD) and the epidemiological data (COVID-19). This is a work in progress.
 
 ## cv_etl_gsod - Covid ETL GSOD
 
@@ -14,7 +14,7 @@ This application is used to extract, transform, and load the county geo data int
 
 ### Gathering test GSOD data
 
-There are a number of parameters that can be used to control the behavior of the application. They include: 
+There are a number of parameters that can be used to control the behavior of the application. They include:
 
 - --output-data-directory: The directory to store the output data.
 - --gsod-data-directory: The directory to store the GSOD data.

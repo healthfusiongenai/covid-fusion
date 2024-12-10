@@ -2,6 +2,20 @@
 
 This application is used to extract, transform, and load the GSOD weather data into a database.
 
+## Building
+
+To build you will need to leverage the `setup.py` file.
+
+- cd into the top-level project directory
+- python setup.py develop
+  - Installing cv_etl_county_geo script to /Users/owenmccusker/.pyenv/versions/3.10.12/bin
+  - Installing cv_etl_gsod script to /Users/owenmccusker/.pyenv/versions/3.10.12/bin
+
+Depending on your python installation, (I use pyenv), you should have the application in your path. 
+For testing, run (need to create test data directory first):
+
+- cv_etl_gsod --output-data-directory ./data/test/gsod
+
 ## Gathering test GSOD data
 
 There are a number of parameters that can be used to control the behavior of the application. They include: 
