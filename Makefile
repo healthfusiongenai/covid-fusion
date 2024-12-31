@@ -64,17 +64,18 @@ county-geo-nocache-container:
 	-f Dockerfile.cv-etl-county-geo \
 	.
 
+#	--entrypoint /bin/bash 
+#	--entrypoint /bin/sh
 # Run the docker container
 gsod-run: gsod-container
 	$(CMD) run \
 	--volume /data/gsod:/data/gsod \
-	--entrypoint /bin/bash \
 	$(LOCAL_IMAGE_NAME_PREFIX)-$(APP_NAME_GSOD):$(IMAGE_VERSION)
 
+#	--entrypoint /bin/bash 
 county-geo-run: county-geo-container
-	$(CMD) run -rm \
+	$(CMD) run \
 	--volume /data/county-geo:/data/county-geo \
-	--entrypoint /bin/bash \
 	$(LOCAL_IMAGE_NAME_PREFIX)-$(APP_NAME_COUNTY_GEO):$(IMAGE_VERSION)	
 
 exec-gsod: gsod-container

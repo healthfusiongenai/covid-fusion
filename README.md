@@ -52,7 +52,7 @@ The following TODO.md file is a list of the next steps for the project.
 
 - [TODO.md](TODO.md)
 
-## Building and running
+## Building and running locally
 
 - cd into project
 - python setup.py develop

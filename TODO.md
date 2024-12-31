@@ -19,7 +19,9 @@ The initial goal is focused on ETL'ing the GSOD weather data into a database, an
 
 ### In Progress
 
+- [ ] 2024-12-10 migrate to use uv for python package creation
 - [ ] 2024-12-10 debug running the docker containers
+- [ ] 2024-12-10 investigategetting lots of whl downloads during image build
 
 ### Done ✓
 

@@ -46,4 +46,4 @@ WORKDIR ${CV_HOME_DIR}
 RUN pip3 install --upgrade pip
 RUN pip3 install --ignore-installed -r requirements.txt
 
-CMD ["python3", "./src/cmds/etl/cv_county_geo/__main__.py"]
+CMD ["python3", "./src/etl/cv_county_geo/__main__.py"]
