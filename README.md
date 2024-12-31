@@ -119,6 +119,7 @@ For testing, run (need to create test data directory first):
 
 ## Project Organization
 
+```text
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
@@ -163,3 +164,4 @@ For testing, run (need to create test data directory first):
     │       └── visualize.py
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+```
