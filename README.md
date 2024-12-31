@@ -54,6 +54,56 @@ The following TODO.md file is a list of the next steps for the project.
 
 ## Building and running locally
 
+### using uv
+
+- cd into project
+- uv sync
+  - this will create a pyproject.toml file, and uv.lock file (which is used to lock the dependencies)
+
+```bash
+➜  covid-fusion git:(develop) ✗ uv sync
+Resolved 31 packages in 2ms
+   Built thriftpy2==0.5.2
+   Built cv-etl-gsod @ file:///Users/owenmccusker/Documents/repos-git/healthfusiongenai/covid-fusion
+Prepared 8 packages in 21.70s
+Installed 31 packages in 219ms
+ + beautifulsoup4==4.12.3
+ + boto3==1.35.90
+ + botocore==1.35.90
+ + bs4==0.0.2
+ + certifi==2024.12.14
+ + charset-normalizer==3.4.1
+ + cv-etl-gsod==0.0.1 (from file:///Users/owenmccusker/Documents/repos-git/healthfusiongenai/covid-fusion)
+ + cython==3.0.11
+ + fqdn==1.5.1
+ + geopandas==1.0.1
+ + idna==3.10
+ + jmespath==1.0.1
+ + natsort==8.4.0
+ + numpy==2.2.1
+ + packaging==24.2
+ + pandas==2.2.3
+ + parquet==1.3.1
+ + ply==3.11
+ + pyogrio==0.10.0
+ + pyproj==3.7.0
+ + python-dateutil==2.9.0.post0
+ + pytz==2024.2
+ + pyyaml==6.0.2
+ + requests==2.32.3
+ + s3transfer==0.10.4
+ + shapely==2.0.6
+ + six==1.17.0
+ + soupsieve==2.6
+ + thriftpy2==0.5.2
+ + tzdata==2024.2
+ + urllib3==2.3.0
+ ```
+
+- uv pip install .
+
+### using setup.py
+
 - cd into project
 - python setup.py develop
   - Installing cv_etl_county_geo script to /Users/owenmccusker/.pyenv/versions/3.10.12/bin
