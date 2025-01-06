@@ -5,6 +5,7 @@ PROJECT_NAME ?= covid-fusion
 IMAGE_NAMESPACE ?= healthfusiongenai/${PROJECT_NAME}
 PARENT_IMAGE_NAME=debian:12-slim
 LOCAL_IMAGE_NAME_PREFIX=${IMAGE_NAMESPACE}
+UV_VERSION ?= 0.5.13
 
 IMAGE_VERSION ?= $(shell cat VERSION)
 APP_NAME_GSOD ?= cv-etl-gsod
@@ -31,6 +32,7 @@ gsod-container:
 	--network=host \
 	--build-arg PARENT_IMAGE_NAME=$(PARENT_IMAGE_NAME) \
 	--build-arg PROJECT_NAME=$(PROJECT_NAME) \
+	--build-arg UV_VERSION=$(UV_VERSION) \
 	-t $(LOCAL_IMAGE_NAME_PREFIX)-$(APP_NAME_GSOD):$(IMAGE_VERSION) \
 	-f Dockerfile.cv-etl-gsod \
 	.
@@ -78,10 +80,10 @@ county-geo-run: county-geo-container
 	--volume /data/county-geo:/data/county-geo \
 	$(LOCAL_IMAGE_NAME_PREFIX)-$(APP_NAME_COUNTY_GEO):$(IMAGE_VERSION)	
 
-exec-gsod: gsod-container
+gsod-exec: gsod-run
 	$(CMD) exec -it $(LOCAL_IMAGE_NAME_PREFIX)-$(APP_NAME_GSOD):$(IMAGE_VERSION) /bin/bash
 
-exec-county-geo: county-geo-container
+county-geo-exec: county-geo-container
 	$(CMD) exec -it $(LOCAL_IMAGE_NAME_PREFIX)-$(APP_NAME_COUNTY_GEO):$(IMAGE_VERSION) /bin/bash
 
 # Push the docker image to the registry

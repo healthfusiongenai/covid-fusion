@@ -2,7 +2,7 @@ import logging
 from csv import DictReader as csv_dict_reader
 
 
-from .gsod_data import (
+from gsod_data import (
     GsodData,
 )
 

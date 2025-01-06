@@ -1,6 +1,7 @@
 ARG PARENT_IMAGE_NAME
 FROM ${PARENT_IMAGE_NAME}
 
+ARG UV_VERSION
 ENV CV_HOME_DIR=/home/cv
 ENV PY_VERSION=python3.11
 ENV PY_ENV_PATH=${CV_HOME_DIR}/cv-venv
@@ -30,6 +31,10 @@ COPY setup.py README.md ${CV_HOME_DIR}
 COPY ./src/* ${CV_HOME_DIR}/src
 COPY requirements.txt ${CV_HOME_DIR}
 
+# SETUP UV ENV
+COPY uv.lock ${CV_HOME_DIR}
+COPY pyproject.toml ${CV_HOME_DIR}
+
 # clean up the image for vulnerabilities
 #RUN apt-get purge -y \
 #    nettools
@@ -39,7 +44,10 @@ USER cv
 WORKDIR ${CV_HOME_DIR}
 
 RUN pip3 install --upgrade pip
-RUN pip3 install --ignore-installed -r requirements.txt
+#RUN pip3 install --ignore-installed -r requirements.txt
+ENV UV_PROJECT_ENVIRONMENT=${PY_ENV_PATH}
+RUN pip install uv==${UV_VERSION} && uv sync --locked --no-editable && pip uninstall -y uv pip
+
 
 # need to review why cmds is not in the path??
 CMD ["python3", "src/etl/cv_gsod/__main__.py"]

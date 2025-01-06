@@ -36,15 +36,15 @@ from uuid import uuid4
 
 import boto3
 
-from .gsod_directory_list import (
+from gsod_directory_list import (
     GsodDirectoryList,
 )
 
-from .gsod_data_file_processor import (
+from gsod_data_file_processor import (
     GsodDataFileProcessor,
 )
 
-from .gsod_processor import (
+from gsod_processor import (
     GsodProcesser,
 )
 
